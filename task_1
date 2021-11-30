@@ -1,0 +1,16 @@
+import argparse
+import os.path
+parser = argparse.ArgumentParser(description='Find file')
+parser.add_argument("strok", type=str)
+args = parser.parse_args()
+
+def s(strok):
+    if os.path.exists(strok):
+       with open(f'{args.strok}', 'r') as file:
+            for i in range(10):
+                line = file.readline()
+                print(line.strip())
+       return line
+    else:
+        print("Нет такого файла")
+s(args.strok)
